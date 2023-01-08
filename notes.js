@@ -1,4 +1,4 @@
-// Array Find Methods Lab
+// Array Find Methods Lab Notes
 
 // Global Variables
 const record = [
@@ -60,14 +60,33 @@ const record = [
     { year: "2022", result: "N/A" },
 ]
 
+// function superbowlWin (array) {
+//     if (array.result === "W") {
+//         return array.year;
+//     } else {
+//         return undefined;
+//     }
+// }
 
-// Global Functions
+
 superbowlWin = (record) => {
-    const result = record.find( record => record.result === "W" );
-    return !!result ? result.year : undefined;
+    const result = record.find( record => record.result === "W" );      // => Arrow function is used inside the array.find()
+    return !!result ? result.year : undefined;                          // => Return ternary operator (instead of If...Else statement)
 }
-superbowlWin(record); // => 1988
 
+// Constant Declaration:
+const season = function (array) {
+    (array.result === "W");
+}
+// Arrow function:
+season = (array) => (array.result === "W");
+// superbowlWin(record);
+
+record.find(superbowlWin);
+// => {year: '1998', result: 'W'}
+
+record.find(superbowlWin).year;
+// => 1988
 
 // Write a function called superbowlWin() in index.js:
 // - The function should receive 1 argument, an Array of JavaScript Objects
@@ -75,3 +94,55 @@ superbowlWin(record); // => 1988
 // - It should use find() to test each Object to see if the result is "W" — a win!
 // - It should return the year when the win occurred (if it occurred at all!)
 // - If no win is found, it should return, sadly, undefined
+
+ 
+// Callback example:
+function useCallback(cb) {
+    cb("Callback function worked");
+}
+// useCallback(value => console.log(value));
+// LOG: "Callback function worked"
+
+function takesCallback(cb) {
+    cb("Practice, practice, practice");
+
+}
+// takesCallback(value => console.log(value));
+// LOG: "Practice, practice, practice"
+
+
+// If Else Example:
+// const favoriteTeam = 'Lakers';
+
+// let team;
+
+// if (favoriteTeam === 'Lakers') {
+//     team = true;
+// } else {
+//     team = false;
+// }
+// => true
+
+// team;
+// => true
+
+
+// Ternary Expression Example:
+const favoriteTeam = 'Bulls';
+const team = favoriteTeam === 'Lakers' ? true : false;
+// => false
+
+team; 
+// =>  false
+
+
+function superbowlWin (array) {
+    if (array.result === "W") {
+        return array.year;
+    } else {
+        return undefined;
+    }
+}
+
+record.find(superbowlWin).year;
+// => 1988
